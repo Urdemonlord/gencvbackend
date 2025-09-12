@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "setup": "node setup.js",
+    "test:backend": "node test-backend.js", 
+    "test:api": "node test-api.js",
+    "test:full": "npm run test:backend && npm run test:api"
+  }
+}

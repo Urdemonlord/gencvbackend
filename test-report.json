@@ -1,0 +1,119 @@
+{
+  "timestamp": "2025-09-12T11:08:07.113Z",
+  "testData": {
+    "personalInfo": {
+      "fullName": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1-234-567-8900",
+      "location": "San Francisco, CA",
+      "linkedinUrl": "https://linkedin.com/in/johndoe",
+      "githubUrl": "https://github.com/johndoe"
+    },
+    "professionalSummary": "Experienced software developer with 5+ years in full-stack development, specializing in React, Node.js, and cloud technologies. Passionate about creating scalable solutions and leading development teams.",
+    "experience": [
+      {
+        "id": "exp1",
+        "company": "Tech Corp",
+        "position": "Senior Software Engineer",
+        "startDate": "2021-01",
+        "endDate": "2024-01",
+        "location": "San Francisco, CA",
+        "isCurrent": false,
+        "description": "Led development of microservices architecture serving 1M+ users daily. Implemented CI/CD pipelines and mentored junior developers.",
+        "achievements": [
+          "Reduced API response time by 40% through optimization",
+          "Implemented automated testing reducing bugs by 60%",
+          "Led team of 5 developers on critical product features"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "id": "edu1",
+        "institution": "University of California, Berkeley",
+        "degree": "Bachelor of Science",
+        "fieldOfStudy": "Computer Science",
+        "startDate": "2017-09",
+        "endDate": "2021-05",
+        "gpa": "3.8",
+        "description": "Relevant coursework: Data Structures, Algorithms, Software Engineering"
+      }
+    ],
+    "skills": [
+      {
+        "id": "skill1",
+        "name": "JavaScript",
+        "level": "Expert",
+        "category": "Technical"
+      },
+      {
+        "id": "skill2",
+        "name": "React",
+        "level": "Advanced",
+        "category": "Technical"
+      },
+      {
+        "id": "skill3",
+        "name": "Node.js",
+        "level": "Advanced",
+        "category": "Technical"
+      },
+      {
+        "id": "skill4",
+        "name": "Leadership",
+        "level": "Intermediate",
+        "category": "Soft"
+      },
+      {
+        "id": "skill5",
+        "name": "Communication",
+        "level": "Advanced",
+        "category": "Soft"
+      }
+    ],
+    "projects": [
+      {
+        "id": "proj1",
+        "name": "E-commerce Platform",
+        "description": "Built a full-stack e-commerce platform with React frontend and Node.js backend, supporting payment processing and inventory management.",
+        "technologies": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "Stripe API",
+          "Docker"
+        ],
+        "url": "https://ecommerce-demo.com",
+        "githubUrl": "https://github.com/johndoe/ecommerce-platform",
+        "startDate": "2023-01",
+        "endDate": "2023-06"
+      }
+    ],
+    "languages": [
+      {
+        "id": "lang1",
+        "name": "English",
+        "proficiency": "Native"
+      },
+      {
+        "id": "lang2",
+        "name": "Spanish",
+        "proficiency": "Conversational"
+      }
+    ]
+  },
+  "structure": "Ready for development",
+  "packages": "Dependencies configured",
+  "types": "TypeScript interfaces defined",
+  "api": "API routes implemented",
+  "security": "Security middleware configured",
+  "htmlGenerator": "PDF generation ready",
+  "recommendations": [
+    "1. Install dependencies: npm install",
+    "2. Set up environment variables in apps/web/.env.local",
+    "3. Get Google Gemini API key",
+    "4. Start development: npm run dev",
+    "5. Test PDF generation with sample data",
+    "6. Deploy to Vercel following DEPLOYMENT.md"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "gencv-backend-monorepo",
+  "version": "1.0.0",
+  "description": "AI-Powered CV Generator - Backend Monorepo with Next.js and Puppeteer",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "type-check": "turbo run type-check",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "dev:web": "turbo run dev --filter=@gencv/web",
+    "build:web": "turbo run build --filter=@gencv/web",
+    "setup": "node setup.js",
+    "test:backend": "node test-backend.js",
+    "test:api": "node test-api.js",
+    "test:full": "npm run test:backend && npm run test:api"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "turbo": "^2.5.6",
+    "typescript": "^5.2.2"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@10.2.3"
+}
