@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getCorsHeaders } from './lib/cors';
 
 // Simple in-memory rate limiter
 const rateLimiter = new Map<string, { count: number; resetTime: number }>();
@@ -74,9 +75,10 @@ export async function middleware(request: NextRequest) {
   
   // Add CORS headers for API routes
   if (pathname.startsWith('/api/')) {
-    response.headers.set('Access-Control-Allow-Origin', process.env.FRONTEND_URL || '*');
-    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-api-key');
+    const cors = getCorsHeaders(request);
+    Object.entries(cors).forEach(([key, value]) => {
+      response.headers.set(key, value);
+    });
   }
   
   return response;

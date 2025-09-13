@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { CVData, CVTemplate } from '@gencv/types';
 import { generatePDF } from '@/app/actions/pdf-generator';
+import { getCorsHeaders } from '@/lib/cors';
 
 // Konfigurasi khusus untuk endpoint PDF
 export const runtime = 'nodejs'; // Memastikan kompatibilitas dengan Puppeteer
@@ -82,4 +83,9 @@ export async function POST(request: NextRequest) {
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
+}
+
+export function OPTIONS(request: NextRequest) {
+  const headers = getCorsHeaders(request);
+  return NextResponse.json({}, { headers });
 }
