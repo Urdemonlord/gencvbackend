@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build --filter=@gencv/web",
+  "buildCommand": "npx turbo build --filter=@gencv/web",
   "outputDirectory": "apps/web/.next",
   "installCommand": "npm install",
   "functions": {
