@@ -17,6 +17,15 @@ const nextConfig = {
     serverComponentsExternalPackages: ['puppeteer-core', '@sparticuz/chromium']
   },
   webpack: (config, { isServer }) => {
+    // Add module alias resolution
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': require('path').resolve(__dirname, './'),
+      '@/app': require('path').resolve(__dirname, './app'),
+      '@/lib': require('path').resolve(__dirname, './lib'),
+      '@/components': require('path').resolve(__dirname, './components')
+    };
+    
     // Resolve puppeteer issue by ignoring problematic files
     if (!isServer) {
       config.resolve.alias['puppeteer-core'] = false;
