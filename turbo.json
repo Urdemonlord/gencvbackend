@@ -1,14 +1,35 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "GEMINI_API_KEY",
+    "API_SECRET_KEY", 
+    "NODE_ENV",
+    "NEXT_PUBLIC_APP_URL",
+    "NEXT_PUBLIC_API_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": [
+        "GEMINI_API_KEY",
+        "API_SECRET_KEY",
+        "NODE_ENV",
+        "NEXT_PUBLIC_APP_URL",
+        "NEXT_PUBLIC_API_URL"
+      ]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": [
+        "GEMINI_API_KEY",
+        "API_SECRET_KEY", 
+        "NODE_ENV",
+        "NEXT_PUBLIC_APP_URL",
+        "NEXT_PUBLIC_API_URL"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
