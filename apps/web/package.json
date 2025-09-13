@@ -14,7 +14,7 @@
     "@gencv/types": "file:../../packages/types",
     "@gencv/ui": "file:../../packages/ui",
     "@gencv/utils": "file:../../packages/utils",
-    "@google/generative-ai": "^0.15.0",
+    "@google/genai": "^1.19.0",
     "@sparticuz/chromium": "^118.0.0",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",

@@ -1,0 +1,183 @@
+{
+  "timestamp": "2025-09-13T12:26:02.064Z",
+  "sampleRequests": {
+    "pdfGeneration": {
+      "method": "POST",
+      "url": "/api/generate-pdf",
+      "body": {
+        "personalInfo": {
+          "fullName": "Jane Smith",
+          "email": "jane.smith@example.com",
+          "phone": "+1-555-123-4567",
+          "location": "New York, NY",
+          "linkedinUrl": "https://linkedin.com/in/janesmith",
+          "githubUrl": "https://github.com/janesmith"
+        },
+        "professionalSummary": "Innovative software engineer with 7+ years of experience in developing scalable web applications. Proven track record in leading cross-functional teams and delivering high-quality products in fast-paced environments.",
+        "experience": [
+          {
+            "id": "exp1",
+            "company": "TechCorp Solutions",
+            "position": "Senior Full Stack Developer",
+            "startDate": "2020-03",
+            "endDate": "2024-01",
+            "location": "New York, NY",
+            "isCurrent": false,
+            "description": "Led development of enterprise-scale web applications using React and Node.js. Architected microservices infrastructure supporting 500K+ daily active users.",
+            "achievements": [
+              "Increased application performance by 50% through code optimization",
+              "Reduced deployment time from 2 hours to 15 minutes using CI/CD",
+              "Mentored 8 junior developers and established coding standards"
+            ]
+          },
+          {
+            "id": "exp2",
+            "company": "StartupXYZ",
+            "position": "Frontend Developer",
+            "startDate": "2018-06",
+            "endDate": "2020-02",
+            "location": "San Francisco, CA",
+            "isCurrent": false,
+            "description": "Built responsive web applications using modern JavaScript frameworks. Collaborated with UX designers to create intuitive user interfaces.",
+            "achievements": [
+              "Developed mobile-first responsive designs for 10+ products",
+              "Implemented automated testing reducing bugs by 40%"
+            ]
+          }
+        ],
+        "education": [
+          {
+            "id": "edu1",
+            "institution": "Stanford University",
+            "degree": "Master of Science",
+            "fieldOfStudy": "Computer Science",
+            "startDate": "2016-09",
+            "endDate": "2018-05",
+            "gpa": "3.9",
+            "description": "Focus on Machine Learning and Web Technologies. Thesis on scalable web architectures."
+          }
+        ],
+        "skills": [
+          {
+            "id": "skill1",
+            "name": "JavaScript",
+            "level": "Expert",
+            "category": "Technical"
+          },
+          {
+            "id": "skill2",
+            "name": "React",
+            "level": "Expert",
+            "category": "Technical"
+          },
+          {
+            "id": "skill3",
+            "name": "Node.js",
+            "level": "Advanced",
+            "category": "Technical"
+          },
+          {
+            "id": "skill4",
+            "name": "Python",
+            "level": "Advanced",
+            "category": "Technical"
+          },
+          {
+            "id": "skill5",
+            "name": "AWS",
+            "level": "Intermediate",
+            "category": "Technical"
+          },
+          {
+            "id": "skill6",
+            "name": "Leadership",
+            "level": "Advanced",
+            "category": "Soft"
+          },
+          {
+            "id": "skill7",
+            "name": "Project Management",
+            "level": "Intermediate",
+            "category": "Soft"
+          }
+        ],
+        "projects": [
+          {
+            "id": "proj1",
+            "name": "Real-time Chat Application",
+            "description": "Built a scalable real-time chat application supporting 10K+ concurrent users using WebSocket technology and Redis for session management.",
+            "technologies": [
+              "React",
+              "Node.js",
+              "Socket.io",
+              "Redis",
+              "MongoDB"
+            ],
+            "url": "https://chat-app-demo.com",
+            "githubUrl": "https://github.com/janesmith/chat-app",
+            "startDate": "2023-01",
+            "endDate": "2023-04"
+          },
+          {
+            "id": "proj2",
+            "name": "Data Analytics Dashboard",
+            "description": "Created an interactive dashboard for business intelligence with real-time data visualization and automated report generation.",
+            "technologies": [
+              "Vue.js",
+              "D3.js",
+              "Express",
+              "PostgreSQL",
+              "Docker"
+            ],
+            "githubUrl": "https://github.com/janesmith/analytics-dashboard",
+            "startDate": "2022-08",
+            "endDate": "2022-12"
+          }
+        ],
+        "languages": [
+          {
+            "id": "lang1",
+            "name": "English",
+            "proficiency": "Native"
+          },
+          {
+            "id": "lang2",
+            "name": "French",
+            "proficiency": "Fluent"
+          },
+          {
+            "id": "lang3",
+            "name": "Spanish",
+            "proficiency": "Conversational"
+          }
+        ],
+        "certifications": [
+          {
+            "id": "cert1",
+            "name": "AWS Certified Solutions Architect",
+            "issuer": "Amazon Web Services",
+            "date": "2023-06",
+            "url": "https://aws.amazon.com/certification/"
+          }
+        ]
+      },
+      "expectedResponseType": "application/pdf"
+    },
+    "aiEnhancement": {
+      "method": "POST",
+      "url": "/api/ai",
+      "body": {
+        "type": "summary",
+        "text": "Sample text for enhancement",
+        "context": {
+          "role": "Developer"
+        }
+      },
+      "expectedResponseType": "application/json"
+    }
+  },
+  "curlExamples": {
+    "pdfGeneration": "curl -X POST http://localhost:3000/api/generate-pdf \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"cvData\":{\"personalInfo\":{\"fullName\":\"Jane Smith\",\"email\":\"jane.smith@example.com\",\"phone\":\"+1-555-123-4567\",\"location\":\"New York, NY\",\"linkedinUrl\":\"https://linkedin.com/in/janesmith\",\"githubUrl\":\"https://github.com/janesmith\"},\"professionalSummary\":\"Innovative software engineer with 7+ years of experience in developing scalable web applications. Proven track record in leading cross-functional teams and delivering high-quality products in fast-paced environments.\",\"experience\":[{\"id\":\"exp1\",\"company\":\"TechCorp Solutions\",\"position\":\"Senior Full Stack Developer\",\"startDate\":\"2020-03\",\"endDate\":\"2024-01\",\"location\":\"New York, NY\",\"isCurrent\":false,\"description\":\"Led development of enterprise-scale web applications using React and Node.js. Architected microservices infrastructure supporting 500K+ daily active users.\",\"achievements\":[\"Increased application performance by 50% through code optimization\",\"Reduced deployment time from 2 hours to 15 minutes using CI/CD\",\"Mentored 8 junior developers and established coding standards\"]},{\"id\":\"exp2\",\"company\":\"StartupXYZ\",\"position\":\"Frontend Developer\",\"startDate\":\"2018-06\",\"endDate\":\"2020-02\",\"location\":\"San Francisco, CA\",\"isCurrent\":false,\"description\":\"Built responsive web applications using modern JavaScript frameworks. Collaborated with UX designers to create intuitive user interfaces.\",\"achievements\":[\"Developed mobile-first responsive designs for 10+ products\",\"Implemented automated testing reducing bugs by 40%\"]}],\"education\":[{\"id\":\"edu1\",\"institution\":\"Stanford University\",\"degree\":\"Master of Science\",\"fieldOfStudy\":\"Computer Science\",\"startDate\":\"2016-09\",\"endDate\":\"2018-05\",\"gpa\":\"3.9\",\"description\":\"Focus on Machine Learning and Web Technologies. Thesis on scalable web architectures.\"}],\"skills\":[{\"id\":\"skill1\",\"name\":\"JavaScript\",\"level\":\"Expert\",\"category\":\"Technical\"},{\"id\":\"skill2\",\"name\":\"React\",\"level\":\"Expert\",\"category\":\"Technical\"},{\"id\":\"skill3\",\"name\":\"Node.js\",\"level\":\"Advanced\",\"category\":\"Technical\"},{\"id\":\"skill4\",\"name\":\"Python\",\"level\":\"Advanced\",\"category\":\"Technical\"},{\"id\":\"skill5\",\"name\":\"AWS\",\"level\":\"Intermediate\",\"category\":\"Technical\"},{\"id\":\"skill6\",\"name\":\"Leadership\",\"level\":\"Advanced\",\"category\":\"Soft\"},{\"id\":\"skill7\",\"name\":\"Project Management\",\"level\":\"Intermediate\",\"category\":\"Soft\"}],\"projects\":[{\"id\":\"proj1\",\"name\":\"Real-time Chat Application\",\"description\":\"Built a scalable real-time chat application supporting 10K+ concurrent users using WebSocket technology and Redis for session management.\",\"technologies\":[\"React\",\"Node.js\",\"Socket.io\",\"Redis\",\"MongoDB\"],\"url\":\"https://chat-app-demo.com\",\"githubUrl\":\"https://github.com/janesmith/chat-app\",\"startDate\":\"2023-01\",\"endDate\":\"2023-04\"},{\"id\":\"proj2\",\"name\":\"Data Analytics Dashboard\",\"description\":\"Created an interactive dashboard for business intelligence with real-time data visualization and automated report generation.\",\"technologies\":[\"Vue.js\",\"D3.js\",\"Express\",\"PostgreSQL\",\"Docker\"],\"githubUrl\":\"https://github.com/janesmith/analytics-dashboard\",\"startDate\":\"2022-08\",\"endDate\":\"2022-12\"}],\"languages\":[{\"id\":\"lang1\",\"name\":\"English\",\"proficiency\":\"Native\"},{\"id\":\"lang2\",\"name\":\"French\",\"proficiency\":\"Fluent\"},{\"id\":\"lang3\",\"name\":\"Spanish\",\"proficiency\":\"Conversational\"}],\"certifications\":[{\"id\":\"cert1\",\"name\":\"AWS Certified Solutions Architect\",\"issuer\":\"Amazon Web Services\",\"date\":\"2023-06\",\"url\":\"https://aws.amazon.com/certification/\"}]},\"template\":\"modern\"}' \\\n  --output generated-cv.pdf",
+    "aiEnhancement": "curl -X POST http://localhost:3000/api/ai \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"type\":\"summary\",\"text\":\"I am a developer\",\"context\":{\"role\":\"Developer\"}}'"
+  }
+}

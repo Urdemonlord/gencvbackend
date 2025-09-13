@@ -1,22 +1,23 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { AIEnhancementRequest, AIEnhancementResponse } from '@gencv/types';
 
 export class GeminiClient {
-  private genAI: GoogleGenerativeAI;
-  private model: any;
+  private genAI: GoogleGenAI;
 
   constructor(apiKey: string) {
-    this.genAI = new GoogleGenerativeAI(apiKey);
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+    this.genAI = new GoogleGenAI({apiKey});
   }
 
   async enhanceContent(request: AIEnhancementRequest): Promise<AIEnhancementResponse> {
     try {
       const prompt = this.buildPrompt(request);
       
-      const result = await this.model.generateContent(prompt);
-      const response = await result.response;
-      const enhancedText = response.text();
+      const result = await this.genAI.models.generateContent({
+        model: 'gemini-1.5-flash',
+        contents: prompt
+      });
+      
+      const enhancedText = result.text || '';
 
       return {
         enhancedText: enhancedText.trim(),
@@ -117,9 +118,11 @@ Guidelines:
   // Test connection to Gemini API
   async testConnection(): Promise<boolean> {
     try {
-      const result = await this.model.generateContent('Test connection');
-      const response = await result.response;
-      return !!response.text();
+      const result = await this.genAI.models.generateContent({
+        model: 'gemini-1.5-flash',
+        contents: 'Test connection'
+      });
+      return !!result.text;
     } catch (error) {
       console.error('Gemini API connection test failed:', error);
       return false;
