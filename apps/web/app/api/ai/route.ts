@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ContentEnhancer } from '@gencv/lib-ai';
+import { getCorsHeaders } from '@/lib/cors';
 
 export const maxDuration = 60; // 60 seconds timeout
 export const runtime = 'nodejs'; // Gunakan runtime nodejs untuk memastikan SDK Google berfungsi dengan benar
@@ -71,4 +72,9 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+export function OPTIONS(request: NextRequest) {
+  const headers = getCorsHeaders(request);
+  return NextResponse.json({}, { headers });
 }
