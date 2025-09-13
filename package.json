@@ -11,6 +11,7 @@
     "clean": "turbo run clean",
     "dev:web": "turbo run dev --filter=@gencv/web",
     "build:web": "turbo run build --filter=@gencv/web",
+    "vercel-build": "turbo run build --filter=@gencv/web",
     "setup": "node setup.js",
     "test:backend": "node test-backend.js",
     "test:api": "node test-api.js",
