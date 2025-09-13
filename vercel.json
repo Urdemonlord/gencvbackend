@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "framework": "nextjs",
   "buildCommand": "npm run build --workspace=@gencv/web",
   "outputDirectory": "apps/web/.next",
   "installCommand": "npm install",
