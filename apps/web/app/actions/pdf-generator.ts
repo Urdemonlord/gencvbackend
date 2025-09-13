@@ -2,7 +2,7 @@
 'use server';
 
 import { CVData, CVTemplate } from '@gencv/types';
-import { generateHTML } from '@gencv/utils/html-generator';
+import { generateHTML } from '@gencv/utils';
 
 // Main function to generate a PDF
 export async function generatePDF(cvData: CVData, template: CVTemplate): Promise<{ 
@@ -18,28 +18,25 @@ export async function generatePDF(cvData: CVData, template: CVTemplate): Promise
     try {
       console.log('Starting PDF generation process...');
       
-      // Determine which puppeteer to use - for development environment, try regular puppeteer first
-      let puppeteer;
+      // Determine which puppeteer to use - prioritize puppeteer-core for stability
+      let puppeteer: any;
       let usedPuppeteerType = 'puppeteer-core';
       
-      if (process.env.NODE_ENV === 'development') {
+      // Always try puppeteer-core first for both dev and production
+      try {
+        puppeteer = (await import('puppeteer-core')).default;
+        usedPuppeteerType = 'puppeteer-core';
+        console.log('Using puppeteer-core for PDF generation');
+      } catch (coreErr) {
+        // Fallback to regular puppeteer if available
         try {
-          // Try to use regular puppeteer first in development
           const puppeteerModule = await import('puppeteer');
           puppeteer = puppeteerModule.default;
           usedPuppeteerType = 'puppeteer';
-          console.log('Using regular puppeteer for PDF generation in development');
-        } catch (err) {
-          console.log('Regular puppeteer not available, falling back to puppeteer-core');
-          const puppeteerCoreModule = await import('puppeteer-core');
-          puppeteer = puppeteerCoreModule.default;
-          usedPuppeteerType = 'puppeteer-core';
+          console.log('Puppeteer-core not available, using regular puppeteer');
+        } catch (regularErr) {
+          throw new Error('Neither puppeteer-core nor puppeteer is available for PDF generation');
         }
-      } else {
-        // In production always use puppeteer-core
-        const puppeteerCoreModule = await import('puppeteer-core');
-        puppeteer = puppeteerCoreModule.default;
-        console.log('Using puppeteer-core for PDF generation in production');
       }
       
       const { getPuppeteerConfig, initChromeFonts } = await import('@/lib/puppeteer-config');

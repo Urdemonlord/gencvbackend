@@ -3,6 +3,28 @@
   "version": "0.1.0",
   "main": "./index.ts",
   "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "require": "./index.ts",
+      "import": "./index.ts"
+    },
+    "./html-generator": {
+      "types": "./html-generator.ts",
+      "require": "./html-generator.ts",
+      "import": "./html-generator.ts"
+    },
+    "./cv-scorer": {
+      "types": "./cv-scorer.ts", 
+      "require": "./cv-scorer.ts",
+      "import": "./cv-scorer.ts"
+    },
+    "./validation": {
+      "types": "./validation.ts",
+      "require": "./validation.ts", 
+      "import": "./validation.ts"
+    }
+  },
   "dependencies": {
     "@gencv/types": "file:../types"
   },

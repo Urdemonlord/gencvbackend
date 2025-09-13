@@ -26,5 +26,8 @@
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "npm@10.2.3"
+  "packageManager": "npm@10.2.3",
+  "dependencies": {
+    "puppeteer": "^24.20.0"
+  }
 }
